@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.example.taczcool.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "LocalPlayerCrawlMixin"
+  ],
+  "mixins": [
+    "LocalPlayerCrawlMixin",
+    "LivingEntityCrawlMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
