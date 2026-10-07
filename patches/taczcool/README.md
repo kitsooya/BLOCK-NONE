@@ -1,25 +1,18 @@
+TACZ ParCool Crawl Fix v1.0.0
 
-Installation information
-=======
+Fixes an incompatibility between TACZ and ParCool that prevents players from crawling through 1-block gaps.
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+Minecraft: 1.21.1
+NeoForge: 21.1.249+
+TACZ: 1.1.8-hotfix-r7
+ParCool: 3.4.3.3+
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+TACZ forcibly applies Pose.SWIMMING through setForcedPose, overriding ParCool's crawl pose. This mod cancels those forced-pose calls in TACZ's client and server crawl handlers, allowing ParCool to control the player's crawling pose normally.
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+Installation: install taczcool-1.0.0.jar on both client and server.
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+The mod is written for TACZ 1.1.8-hotfix-r7.
+If TACZ changes its crawl/pose implementation in a future version,
+the mixin may need to be updated.
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+TACZ r7 + ParCool 3.4.3.3 + NeoForge 21.1.249+
